@@ -1,0 +1,40 @@
+[
+    {
+        "id":1,
+        "name": "front.jpg",
+        "price": 30,
+        "type": "front"
+    },
+
+    {
+        "id":2,
+        "name": "back.jpg",
+        "price": 30,
+        "type": "back"
+    },
+    {
+        "id":3,
+        "name": "down.jpg",
+        "price": 30,
+        "type": "bottom"
+    },
+    {
+        "id":4,
+        "name": "back.jpg",
+        "price": 30,
+        "type": "bottom"
+    },
+    {
+        "id":5,
+        "name": "front.jpg",
+        "price": 30,
+        "type": "back"
+    },
+
+    {
+        "id":6,
+        "name": "back.jpg",
+        "price": 30,
+        "type": "front"
+    }
+]

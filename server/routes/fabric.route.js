@@ -3,7 +3,7 @@ var app = module.exports = express.Router();
 var Fabric = require('../models/fabric.model');
 
 // GET, get all fabric
-app.get('/fabric/', (req, res) => {
+app.get('/fabric/', (res) => {
     Fabric.find({}, (err, fabrics) => {   
         if (err) {
             return res.json({ "error": err });

@@ -1,0 +1,22 @@
+<section class="creator">
+    <!-- <div  class="model">
+      <img
+      [ngClass]="{'imgSide': selectedOption === 3}" 
+      class="imgFront" [src]="model.srcFront" alt="">
+      <img 
+      [ngClass]="{'imgSide': selectedOption === 3}"
+      class="imgBottom"[src]="model.srcBottom" alt="">
+      <img *ngIf="selectedOption ===3"
+      class="imgBack" [src]="model.srcBack" alt="">
+    </div>    -->
+    
+  <app-tailor-model></app-tailor-model>
+    <app-item-selection
+      [options]="options"
+      [front]="front"
+      [bottom]="bottom"
+      [belt]="belt"
+      [back]="back"      
+      [fabric]="fabric"
+    ></app-item-selection>
+</section>

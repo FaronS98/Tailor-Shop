@@ -1,0 +1,32 @@
+.model{  
+    width: 350px;
+    height: 70%;   
+    margin: 30px;
+    border: 1px solid black;
+    background-color: #fff;
+    
+    img{
+        width: 350px;
+        height: 500px;
+        padding-top: 15px;
+    }
+
+    .imgFront{
+        padding: 25px 75px 0 25px;
+    }
+
+    .imgBottom{  
+        padding: 0 0 25px 100px;
+    }
+
+    .imgSide{
+        display: inline-block;
+        width: 15%;
+        height: 25px;
+        padding: 0;                
+    }
+    .imgBack{
+        width:100%;
+        height:300px;
+    }
+}

@@ -6,18 +6,11 @@ const bodyParser = require('body-parser');
 const errorhandler = require('errorhandler');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
-
 const express = require('express');
-
 const port = process.env.PORT || 8080;
 
-/* Models */
-const ItemsOfTheCreation = require('./models/itemOFTheCreation.model');
-const Creations = require('./models/creation.model');
-const Fabrics = require('./models/fabric.model');
-
 /* Routes */
-const ItemOfTheCreationRouter = require('./routes/itemOFTheCreation.route');
+const ItemOfTheCreationRouter = require('./routes/itemOfTheCreation.route');
 const CreationRouter = require('./routes/creation.route');
 const FabricRouter = require('./routes/fabric.route');
 
@@ -25,7 +18,8 @@ const app = express();
 app.use(helmet())
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://FaronS98:zaqwertyhn@cluster0.byafb.mongodb.net/engineering-project?retryWrites=true&w=majority', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://FaronS98:zaqwertyhn@cluster0.nqpnp.mongodb.net/Tailor-Shop?retryWrites=true&w=majority', {useNewUrlParser: true});
+
 app.use('/', express.static(__dirname));
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");

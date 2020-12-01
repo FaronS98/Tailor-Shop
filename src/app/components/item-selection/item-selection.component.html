@@ -1,0 +1,23 @@
+<section class="selection-panel">
+  <div class="options">
+      <div 
+        *ngFor="let option of options" 
+        class="option" 
+        [ngClass]="{'active': selectedOption === option.id}" 
+        (click)="selectOption(option.id)"
+      >
+        <img src="../assets/img/{{option.src}}" [alt]="option.name">
+      </div>
+    </div>
+    <div class="items">
+      <h3>{{selectedOptionName}}</h3>
+      <div class="selections-of-items">
+        <div 
+        *ngFor="let item of selectedCollection">        
+          <img src="../assets/img/{{item.name}}" [alt]="item.name"
+          [ngClass]= "{'active': selectedItem === item.id}"
+          (click)="selectItem(item.id)">
+        </div>
+    </div>
+  </div>
+</section>

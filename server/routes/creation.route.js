@@ -3,12 +3,12 @@ var app = module.exports = express.Router();
 var Creation = require('../models/creation.model');
  
 // GET, get all creation
-app.get('/creation/', (req, res) => {
+app.get('/creation/', (res) => {
     Creation.find({}, (err, creations) => {   
         if (err) {
             return res.json({ "error": err });
         } else {
-            console.log(sreations);
+            console.log(creations);
             return res.status(200).json(creations);
         }
     });
@@ -31,7 +31,7 @@ app.post('/creations', (req, res) => {
     creation.dateOfOrder = req.body.dateOfOrder;
     creation.executionDate = req.body.executionDate;
 
-    user.save((err) => {
+    creation.save((err) => {
         if (err) {
             return res.status(409).json({message: 'Wrong data'});
         } else {

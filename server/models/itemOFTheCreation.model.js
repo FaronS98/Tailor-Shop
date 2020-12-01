@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
  
-var ItemOFTheCreationSchema = new Schema(
+var ItemOfTheCreationSchema = new Schema(
     {    
         src: {
             type: String,
@@ -18,4 +18,4 @@ var ItemOFTheCreationSchema = new Schema(
     }
 );
  
-module.exports = mongoose.model('ItemOFTheCreation', ItemOFTheCreationSchema);
+module.exports = mongoose.model('ItemOfTheCreation', ItemOfTheCreationSchema);

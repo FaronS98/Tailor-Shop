@@ -2,7 +2,6 @@ var express = require('express');
 var app = module.exports = express.Router(); 
 var ItemOfTheCreation = require('../models/itemOfTheCreation.model');
 
-// GET, get all faculties
 app.get('/ItemOfTheCreation/', (req, res) => {
     ItemOfTheCreation.find({}, (err, items) => {   
         if (err) {
