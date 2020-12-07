@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "frontID": 1,
+        "bottomID": 2,
+        "backID": 3,
+        "beltID":10,
+        "fabricID": 1,
+        "price": 20
+    }
+]

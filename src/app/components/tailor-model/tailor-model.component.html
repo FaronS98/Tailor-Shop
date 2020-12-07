@@ -1,3 +1,17 @@
+<!-- <div  class="model">
+      <img
+      [ngClass]="{'imgSide': items[id].type === back}" 
+      class="imgFront" [src]="../../assets/img/{{items[id].name}}" alt="">
+      <img 
+      [ngClass]="{'imgSide': items[id].type === back}"
+      class="imgBottom"[src]="m../../assets/img/{{items[id].name}}" alt="">
+      <img *ngIf="items[id].type === back"
+      class="imgBack" [src]="../../assets/img/{{items[id].name}}" alt="">
+ </div>  -->
 <div class="model">
-    <img src="../assets/img/the-figure-of-the-4811248_960_720.png" alt="">
+      <img src="../../assets/img/{{items[creation.frontID-1].name}}" alt="">
+      <img src="../../assets/img/{{items[creation.bottomID-1].name}}" alt="">
+      <img src="../../assets/img/{{items[creation.beltID-1].name}}" alt="">
+      <img src="../../assets/img/{{items[creation.backID-1].name}}" alt="">
+      <img src="../../assets/img/{{fabric[creation.fabricID-1].name}}" alt="">
 </div>

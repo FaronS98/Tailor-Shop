@@ -19,4 +19,8 @@ export class TailorCollectionService {
   getFabric() {
     return this.http.get(`../assets/test/fabric.json`);
   }  
+
+  getCreations() {
+    return this.http.get(`../assets/test/creations.json`);
+  }  
 }

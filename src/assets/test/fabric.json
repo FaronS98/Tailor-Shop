@@ -1,14 +1,20 @@
 [
     {
         "id": 1,
-        "name": "Jedwab",
+        "name": "down.jpg",
         "qualityrPrice": 1.3,
-        "src": ""
+        "src": "down.jpg"
     },
     {
         "id": 2,
-        "name": "Koronka",
+        "name": "front.jpg",
         "qualityrPrice": 1.3,
-        "src": ""
+        "src": "back.jpg"
+    },
+    {
+        "id": 3,
+        "name": "back.jpg",
+        "qualityrPrice": 1.3,
+        "src": "back.jpg"
     }
 ]

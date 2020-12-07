@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -10,32 +10,32 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ItemSelectionComponent implements OnInit {
   @Input() options = null;
   @Input() fabric = null;
+  @Input() items = null;
 
-  @Input() front = null;
-  @Input() bottom = null;
-  @Input() back = null;
-  @Input() belt = null;
-
-  constructor(private http: HttpClient) { 
-    this.http.get(`../assets/test/items.json`).toPromise().then(data =>{
-
-    });
+  @Output() newCreation = new EventEmitter<Object>();
+  addNewCreation(){
+    this.newCreation.emit(this.creation);
   }
+  
+  creation = {
+    frontID: 1,
+    bottomID: 2,
+    backID: 3,
+    beltID: 7,
+    fabricID: 2,
+    price: 50
+  }  
+
+  constructor(private http: HttpClient) {  }
 
   selectedOption: number = null;
-  selectedOptionName: String = '';
-  selectedCollection = [];
   selectedItem: number = null;
+  selectedCollection = [];
+
 
   ngOnInit(): void {
+    this.addNewCreation();   
   }
-
-  // front = [];
-  // bottom = [];
-  // belt = [];
-  // back = [];
-  // fabric = [];
-  
 
   /**
    * Select active option
@@ -46,16 +46,7 @@ export class ItemSelectionComponent implements OnInit {
     this.selectedOption = value;
     this.setSelectedCollection(value);
   }
-
-  /**
-   * Select item
-   * 
-   * @param {number} value
-   */
-  selectItem(value: number): void {
-    this.selectedItem = value;
-    // this.setSelectedItemOnTheModel(value);
-  } 
+  
 
    /**
    * Set selected collection
@@ -66,37 +57,47 @@ export class ItemSelectionComponent implements OnInit {
 
     switch(value) {
       case 1: {
-        this.selectedCollection = this.front;
-        this.selectedOptionName = this.options[value-1].name;
-        this.selectedItem = null;
+        this.selectedCollection = [];
+        for(let i in this.items){
+          if(this.items[i].type === "front"){
+            this.selectedCollection.push(this.items[i]);
+          }
+        }        
         break;
       }
 
       case 2: {
-        this.selectedCollection = this.bottom;
-        this.selectedOptionName = this.options[value-1].name;
-        this.selectedItem = null;
+        this.selectedCollection = [];
+        for(let i in this.items){
+          if(this.items[i].type === "bottom"){
+            this.selectedCollection.push(this.items[i]);
+          }
+        }
         break;
       }
 
       case 3: {
-        this.selectedCollection = this.belt;
-        this.selectedOptionName = this.options[value-1].name;
-        this.selectedItem = null;
+        this.selectedCollection = [];
+        for(let i in this.items){
+          if(this.items[i].type === "belt"){
+            this.selectedCollection.push(this.items[i]);
+          }
+        }
         break;
       }
 
       case 4: {
-        this.selectedCollection = this.back;
-        this.selectedOptionName = this.options[value-1].name;
-        this.selectedItem = null;
+        this.selectedCollection = [];
+        for(let i in this.items){
+          if(this.items[i].type === "back"){
+            this.selectedCollection.push(this.items[i]);
+          }
+        }
         break;
       }
       
       case 5: {
         this.selectedCollection = this.fabric;
-        this.selectedOptionName = this.options[value-1].name;
-        this.selectedItem = null;
         break;
       }
 
@@ -104,5 +105,45 @@ export class ItemSelectionComponent implements OnInit {
         this.selectedCollection = [];
       }
     }
-  }
+  }     
+
+    /**
+     * Select item
+     * 
+     * @param {number} value
+     */
+    selectItem(value: number): void {
+      this.selectedItem = value;
+      this.setSelectedItemOnTheModel(value);
+      this.addNewCreation();
+    } 
+
+    /**
+     * Set selected item on the model
+     * 
+     *  @param {number} value
+     */
+    setSelectedItemOnTheModel(value: number): void{
+      switch(this.selectedOption) {
+      case 1: {
+        this.creation.frontID = this.selectedItem;
+        break;
+      }
+      case 2: {
+        this.creation.bottomID = this.selectedItem;
+        break;
+      }
+      case 3: {
+        this.creation.beltID = this.selectedItem;
+        break;
+      }
+      case 4: {
+        this.creation.backID = this.selectedItem;
+        break;
+      }
+      case 5: {
+        this.creation.fabricID = this.selectedItem;
+      }
+    }
+    }
 }

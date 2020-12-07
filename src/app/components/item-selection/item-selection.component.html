@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="items">
-      <h3>{{selectedOptionName}}</h3>
+      <h3 *ngIf= "selectedOption !== null">{{options[selectedOption - 1].name}}</h3>
       <div class="selections-of-items">
         <div 
         *ngFor="let item of selectedCollection">        

@@ -36,5 +36,11 @@
         "name": "back.jpg",
         "price": 30,
         "type": "front"
+    },
+    {
+        "id":7,
+        "name": "back.jpg",
+        "price": 30,
+        "type": "belt"
     }
 ]
