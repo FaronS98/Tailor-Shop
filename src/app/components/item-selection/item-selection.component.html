@@ -3,7 +3,7 @@
       <div 
         *ngFor="let option of options" 
         class="option" 
-        [ngClass]="{'active': selectedOption === option.id}" 
+        [ngClass]="{'belt-img': option.id === 3, 'active': selectedOption === option.id}" 
         (click)="selectOption(option.id)"
       >
         <img src="../assets/img/{{option.src}}" [alt]="option.name">
@@ -15,7 +15,7 @@
         <div 
         *ngFor="let item of selectedCollection">        
           <img src="../assets/img/{{item.name}}" [alt]="item.name"
-          [ngClass]= "{'active': selectedItem === item.id}"
+          [ngClass]= "{'belt-img': selectedOption === 3, 'active': selectedItem === item.id}"
           (click)="selectItem(item.id)">
         </div>
     </div>

@@ -12,7 +12,7 @@ export class TailorModelComponent implements OnInit {
   @Input() items = null;
   @Input() fabric = null;
   @Input() creation = {};
-
+  @Input() selectedOption = null;
 
   constructor(private http: HttpClient) { }
 

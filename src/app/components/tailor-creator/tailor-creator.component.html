@@ -3,9 +3,11 @@
       [creation]= "creation"
       [items]="items"
       [fabric]="fabric"
+      [selectedOption]="selectedOption"
   ></app-tailor-model>
   <app-item-selection
   (newCreation)= "getOutNewCreation($event)"
+  (newOption) = "getOutSelectedOption($event)"
   [options]="options"
   [items]="items"  
   [fabric]="fabric"

@@ -2,26 +2,26 @@
     {
         "id": 1,
         "name": "Front",
-        "src": "front.jpg"
+        "src": "front.png"
     },
     {
         "id": 2,
         "name": "Bottom",
-        "src": "down.jpg"
+        "src": "bottom.png"
     },
     {
         "id": 3,
         "name": "Belt",
-        "src": "front.jpg"
+        "src": "belt6.png"
     },
     {
         "id": 4,
         "name": "Back",
-        "src": "back.jpg"
+        "src": "back.png"
     },
     {
         "id": 5,
         "name": "Fabric",
-        "src": "front.jpg"
+        "src": "fabrics.jpg"
     }
 ]

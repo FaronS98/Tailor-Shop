@@ -1,45 +1,303 @@
 [
     {
         "id":1,
-        "name": "front.jpg",
+        "name": "front.png",
         "price": 30,
         "type": "front"
     },
 
     {
         "id":2,
-        "name": "back.jpg",
+        "name": "front2.png",
         "price": 30,
-        "type": "back"
+        "type": "front"
     },
     {
         "id":3,
-        "name": "down.jpg",
+        "name": "front3.png",
         "price": 30,
-        "type": "bottom"
+        "type": "front"
     },
     {
         "id":4,
-        "name": "back.jpg",
+        "name": "front4.png",
         "price": 30,
-        "type": "bottom"
+        "type": "front"
     },
     {
         "id":5,
-        "name": "front.jpg",
+        "name": "front5.png",
         "price": 30,
-        "type": "back"
+        "type": "front"
     },
 
     {
         "id":6,
-        "name": "back.jpg",
+        "name": "front6.png",
         "price": 30,
         "type": "front"
     },
     {
         "id":7,
-        "name": "back.jpg",
+        "name": "front7.png",
+        "price": 30,
+        "type": "front"
+    },
+    {
+        "id":8,
+        "name": "front8.png",
+        "price": 30,
+        "type": "front"
+    },
+    {
+        "id":9,
+        "name": "front9.png",
+        "price": 30,
+        "type": "front"
+    },
+    {
+        "id":10,
+        "name": "front10.png",
+        "price": 30,
+        "type": "front"
+    },
+    {
+        "id":11,
+        "name": "front11.png",
+        "price": 30,
+        "type": "front"
+    },
+    {
+        "id":12,
+        "name": "front12.png",
+        "price": 30,
+        "type": "front"
+    },
+    {
+        "id":13,
+        "name": "front13.png",
+        "price": 30,
+        "type": "front"
+    },
+    {
+        "id":14,
+        "name": "front14.png",
+        "price": 30,
+        "type": "front"
+    },
+    {
+        "id":15,
+        "name": "front15.png",
+        "price": 30,
+        "type": "front"
+    },
+    {
+        "id":16,
+        "name": "front16.png",
+        "price": 30,
+        "type": "front"
+    },
+    {
+        "id":17,
+        "name": "front17.png",
+        "price": 30,
+        "type": "front"
+    },
+    {
+        "id":18,
+        "name": "front18.png",
+        "price": 30,
+        "type": "front"
+    },
+    {
+        "id":19,
+        "name": "front19.png",
+        "price": 30,
+        "type": "front"
+    },
+    {
+        "id":20,
+        "name": "front20.png",
+        "price": 30,
+        "type": "front"
+    },
+    {
+        "id":21,
+        "name": "front21.png",
+        "price": 30,
+        "type": "front"
+    },
+    {
+        "id":22,
+        "name": "front22.png",
+        "price": 30,
+        "type": "front"
+    },
+    {
+        "id":23,
+        "name": "bottom.png",
+        "price": 30,
+        "type": "bottom"
+    },
+    {
+        "id":24,
+        "name": "bottom2.png",
+        "price": 30,
+        "type": "bottom"
+    },
+    {
+        "id":25,
+        "name": "bottom3.png",
+        "price": 30,
+        "type": "bottom"
+    },
+    {
+        "id":26,
+        "name": "bottom4.png",
+        "price": 30,
+        "type": "bottom"
+    },
+    {
+        "id":27,
+        "name": "bottom5.png",
+        "price": 30,
+        "type": "bottom"
+    },
+    {
+        "id":28,
+        "name": "bottom6.png",
+        "price": 30,
+        "type": "bottom"
+    },
+    {
+        "id":29,
+        "name": "bottom7.png",
+        "price": 30,
+        "type": "bottom"
+    },
+    {
+        "id":30,
+        "name": "bottom8.png",
+        "price": 30,
+        "type": "bottom"
+    },
+    {
+        "id":31,
+        "name": "bottom9.png",
+        "price": 30,
+        "type": "bottom"
+    },
+    {
+        "id":32,
+        "name": "bottom10.png",
+        "price": 30,
+        "type": "bottom"
+    },
+    {
+        "id":33,
+        "name": "bottom11.png",
+        "price": 30,
+        "type": "bottom"
+    },
+    {
+        "id":34,
+        "name": "back.png",
+        "price": 30,
+        "type": "back"
+    },
+    {
+        "id":35,
+        "name": "back2.png",
+        "price": 30,
+        "type": "back"
+    },
+    {
+        "id":36,
+        "name": "back3.png",
+        "price": 30,
+        "type": "back"
+    },
+    {
+        "id":37,
+        "name": "back4.png",
+        "price": 30,
+        "type": "back"
+    },
+    {
+        "id":38,
+        "name": "back5.png",
+        "price": 30,
+        "type": "back"
+    },
+    {
+        "id":39,
+        "name": "back6.png",
+        "price": 30,
+        "type": "back"
+    },
+    {
+        "id":40,
+        "name": "back7.png",
+        "price": 30,
+        "type": "back"
+    },
+    {
+        "id":41,
+        "name": "back8.png",
+        "price": 30,
+        "type": "back"
+    },
+    {
+        "id":42,
+        "name": "back9.png",
+        "price": 30,
+        "type": "back"
+    },
+    {
+        "id":43,
+        "name": "back10.png",
+        "price": 30,
+        "type": "back"
+    },
+    {
+        "id":44,
+        "name": "back11.png",
+        "price": 30,
+        "type": "back"
+    },
+    {
+        "id":45,
+        "name": "belt.png",
+        "price": 30,
+        "type": "belt"
+    },
+    {
+        "id":46,
+        "name": "belt2.png",
+        "price": 30,
+        "type": "belt"
+    },
+    {
+        "id":47,
+        "name": "belt3.png",
+        "price": 30,
+        "type": "belt"
+    },
+    {
+        "id":48,
+        "name": "belt4.png",
+        "price": 30,
+        "type": "belt"
+    },
+    {
+        "id":49,
+        "name": "belt5.png",
+        "price": 30,
+        "type": "belt"
+    },
+    {
+        "id":50,
+        "name": "belt6.png",
         "price": 30,
         "type": "belt"
     }

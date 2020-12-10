@@ -13,16 +13,21 @@ export class ItemSelectionComponent implements OnInit {
   @Input() items = null;
 
   @Output() newCreation = new EventEmitter<Object>();
+  @Output() newOption = new EventEmitter<Number>();
   addNewCreation(){
     this.newCreation.emit(this.creation);
+  }
+
+  addNewOption(){
+    this.newOption.emit(this.selectedOption);
   }
   
   creation = {
     frontID: 1,
-    bottomID: 2,
-    backID: 3,
-    beltID: 7,
-    fabricID: 2,
+    bottomID: 23,
+    backID: 38,
+    beltID: 45,
+    fabricID: 1,
     price: 50
   }  
 
@@ -32,9 +37,14 @@ export class ItemSelectionComponent implements OnInit {
   selectedItem: number = null;
   selectedCollection = [];
 
+  log(){
+    console.log(this.items);
+    console.log(this.fabric);
+  }
 
   ngOnInit(): void {
-    this.addNewCreation();   
+    this.addNewCreation();  
+    this.log(); 
   }
 
   /**
@@ -45,6 +55,7 @@ export class ItemSelectionComponent implements OnInit {
   selectOption(value: number): void {
     this.selectedOption = value;
     this.setSelectedCollection(value);
+    this.addNewOption();
   }
   
 

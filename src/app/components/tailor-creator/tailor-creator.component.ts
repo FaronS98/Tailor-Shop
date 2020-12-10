@@ -66,10 +66,10 @@ export class TailorCreatorComponent implements OnInit {
        }
     }
 
-    // getOutSelectedOpyion(selected: number){
-    //   if(selected){
-    //       this.selectedOption = selected;
-    //      }
-    //   }
+    getOutSelectedOption(selected: number){
+      if(selected){
+          this.selectedOption = selected;
+         }
+    }
   
 }

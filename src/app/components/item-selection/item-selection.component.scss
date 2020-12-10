@@ -10,7 +10,8 @@
         justify-content: space-between;
         align-items: center;
         padding: 10% 0;
-        width:15%;
+        width:77px;
+        height:600px;
         border: 1px solid black;
 
         .option{
@@ -22,6 +23,7 @@
                 width:73px;
                 height:73px;
             }
+
         }
         .active{
             border:2px solid red;
@@ -29,7 +31,16 @@
                 width:71px;
                 height:71px;
             }
-        }            
+        }  
+            
+        .belt-img{
+            display:flex;
+            align-items: center;
+            background-color: #fff;
+            img{
+                height:10px;
+            }
+        }         
     }
 
     .items{
@@ -37,13 +48,15 @@
         min-width:85%;
         border:1px solid black;
         h3{
-            font-size: 30px;
+            font-size: 30px;        
             text-align:center;
-            line-height: 45px;;
+            line-height: 45px;
         }
 
         .selections-of-items{
-            display:flex;                
+            display:flex;   
+            flex-wrap: wrap;   
+            width:720px;      
             img{
                 width:100px;
                 height:100px;
@@ -51,11 +64,16 @@
             }
             .active{
                 border:2px solid red;
-                img{
-                    width:96px;
-                    height:96px;
-                }
             } 
-        }             
+                
+            .belt-img{
+                display:flex;
+                align-items: center;
+                background-color: #fff;
+                margin: 10px 20px;
+                padding:43px 2px;
+                height:100px;
+            }
+        }              
     }
 }
