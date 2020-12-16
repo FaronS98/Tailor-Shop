@@ -1,0 +1,20 @@
+<section class="creator">
+   
+  <app-tailor-model
+     [selectedCollectionName]= "selectedCollectionName"
+     [creation]="creation"
+     [assetsUrl]="assetsUrl"
+  ></app-tailor-model>
+
+  <app-item-selection
+     [selectedCollectionName]= "selectedCollectionName"
+     [options]="options"
+     [selectedCollection]="selectedCollection"
+     [selectedItem]="selectedItem"
+     [creation]="creation"
+     [assetsUrl]="assetsUrl"
+     (onOptionSelection)= "selectOption($event)"
+     (onItemSelection)="selectItem($event)"
+  ></app-item-selection>
+  
+</section>

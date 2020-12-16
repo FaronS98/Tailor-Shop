@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule} from '@angular/router';
-import { TailorCreatorComponent } from './components/tailor-creator/tailor-creator.component'
+import { TailorCreatorComponent } from './components/tailor_creator/tailor_creator.component'
+import { TailorStartComponent } from './components/tailor_start/tailor_start.component'
 
 const routes: Routes = [
-    { path: 'creator', component: TailorCreatorComponent }
+    { path: '', component: TailorStartComponent },
+    { path: 'creator', component: TailorCreatorComponent }    
 ];
 
 @NgModule({

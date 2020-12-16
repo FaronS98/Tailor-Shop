@@ -1,0 +1,41 @@
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    width: 1280px;
+    margin: 0 auto;
+    padding: 20px 30px;        
+   
+    img{
+        width:180px;
+        cursor:pointer;
+    }
+   
+    ul{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        width:700px;
+        height:180px;
+        list-style:none;
+        
+    }
+    li{        
+        font-size: 25px;
+        text-transform: uppercase;
+        font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;        
+        color:#555;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    li:hover{
+        padding-bottom: 5px;
+        border-bottom: 2px solid black;
+        color:black;
+    }
+    
+    li:focus, img:focus{
+        outline:0;
+    }
+}
+

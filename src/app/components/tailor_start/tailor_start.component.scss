@@ -1,0 +1,27 @@
+.citation{
+    width:100%;
+    background-image: url('/assets/img/citation-background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+
+    p{
+        width:100%;
+        max-width:1920px;
+        height:inherit;
+        margin:0 auto;
+        padding:140px 150px;
+        line-height: 50px;
+        background-color: rgba(126, 112, 112, 0.582);
+        text-align: center;
+        color:white;
+        font-family: 'Caveat', cursive, sans-serif;
+        font-size: 40px;
+    }
+
+    span{
+        display:block;
+        padding-top:50px;
+        font-family: 'Dancing Script', Arial, sans-serif;
+        color:#ddd;
+    }
+}

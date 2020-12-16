@@ -1,27 +1,27 @@
 [
     {
         "id": 1,
-        "name": "Front",
-        "src": "front.png"
+        "name": "front",
+        "src": "front.jpg"
     },
     {
         "id": 2,
-        "name": "Bottom",
-        "src": "bottom.png"
+        "name": "bottom",
+        "src": "bottom.jpg"
     },
     {
         "id": 3,
-        "name": "Belt",
-        "src": "belt6.png"
+        "name": "belt",
+        "src": "belt.jpg"
     },
     {
         "id": 4,
-        "name": "Back",
-        "src": "back.png"
+        "name": "back",
+        "src": "back.jpg"
     },
     {
         "id": 5,
-        "name": "Fabric",
+        "name": "fabric",
         "src": "fabrics.jpg"
     }
 ]

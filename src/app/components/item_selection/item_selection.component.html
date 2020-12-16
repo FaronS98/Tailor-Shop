@@ -1,0 +1,25 @@
+<section class="selection-panel">
+  <div class="options">
+    <div 
+      *ngFor="let option of options" 
+      class="option" 
+      [ngClass]="{'active': option.name === selectedCollectionName}"
+      (click)="onOptionSelection.emit(option)"
+    >
+      <img src="{{assetsUrl}}{{option.src}}" alt="{{option.type}}"/>
+    </div>
+  </div>
+  <div class="items">
+    <h3>{{selectedCollectionName}}</h3>
+    <div class="selections-of-items">
+      <div 
+        *ngFor="let item of selectedCollection">
+          <img 
+            [ngClass]="{'belt-img': selectedCollectionName === 'belt', 'active': item === selectedItem}"
+            src="{{assetsUrl}}{{item.name}}"
+            alt="item.name"
+            (click)="onItemSelection.emit(item)"
+          >
+        </div>
+    </div>
+</div>

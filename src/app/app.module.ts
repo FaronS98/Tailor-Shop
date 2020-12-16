@@ -5,9 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ItemSelectionComponent } from './components/item-selection/item-selection.component';
-import { TailorCreatorComponent } from './components/tailor-creator/tailor-creator.component';
-import { TailorModelComponent } from './components/tailor-model/tailor-model.component';
+import { ItemSelectionComponent } from './components/item_selection/item_selection.component';
+import { TailorCreatorComponent } from './components/tailor_creator/tailor_creator.component';
+import { TailorModelComponent } from './components/tailor_model/tailor_model.component';
+import { TailorHeaderComponent } from './components/tailor_header/tailor_header.component';
+import { TailorFooterComponent } from './components/tailor_footer/tailor_footer.component';
+import { TailorStartComponent } from './components/tailor_start/tailor_start.component';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { TailorModelComponent } from './components/tailor-model/tailor-model.com
     AppComponent,
     ItemSelectionComponent,
     TailorCreatorComponent,
-    TailorModelComponent
+    TailorModelComponent,
+    TailorHeaderComponent,
+    TailorFooterComponent,
+    TailorStartComponent
   ],
   imports: [
     BrowserModule,

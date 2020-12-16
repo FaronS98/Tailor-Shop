@@ -1,0 +1,10 @@
+<div *ngIf="selectedCollectionName !== 'back'" class="model" >
+      <img  class="imgFront" src="{{assetsUrl}}{{creation.frontItem.name}}" alt="creation.frontItem.name">
+      <img  class="imgBottom" src="{{assetsUrl}}{{creation.bottomItem.name}}" alt="creation.bottomItem.name">
+      <img  *ngIf="creation.beltItem.id !== 1" class="imgBelt" src="{{assetsUrl}}{{creation.beltItem.name}}" alt="creation.beltItem.name">
+      <img  class="imgFabric" src="{{assetsUrl}}{{creation.fabricItem.name}}" alt="creation.fabricItem.name">
+</div>
+<div *ngIf="selectedCollectionName === 'back'" class="model">
+      <img  class="imgBack" src="{{assetsUrl}}{{creation.backItem.name}}" alt="creation.backItem.name">
+      <img class="imgFabric" src="{{assetsUrl}}{{creation.fabricItem.name}}" alt="creation.fabricItem.name">
+</div>
