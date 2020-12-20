@@ -25,3 +25,44 @@
         color:#ddd;
     }
 }
+
+.categories{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width:1280px;
+    margin:0 auto;
+    padding: 50px 0;
+    background-color:#ddd;
+
+    div{
+        position: relative;
+        overflow: hidden;
+        cursor:pointer;
+    }
+
+    img{
+        width:400px;
+        height:300px;
+    }
+    
+    p{
+        width:100%;
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translate(0, -50%);        
+        transition: .5s;
+        font-size: 30;
+        text-align: center;
+        font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;  
+        color: white;
+        line-height: 70px;
+        background-color: rgba(100,100,100, .5);
+    }
+
+    div:hover p{
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+}

@@ -41,7 +41,7 @@ export class TailorCreatorComponent implements OnInit {
    * Set default settings
    */
   private setDefaultSettings(): void {
-    this.getOptions();
+    this.getOptions();   
   }
 
   /**
@@ -89,7 +89,7 @@ export class TailorCreatorComponent implements OnInit {
   getOptions(): void {
     this.tailorCollectionService.getOptions().subscribe(options => {
       this.options = options;  
-      this.setDefaultCreation();    
+      this.setDefaultCreation();   
     });
   }
 

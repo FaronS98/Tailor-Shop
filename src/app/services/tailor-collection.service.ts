@@ -6,6 +6,8 @@ import {CollectionItem} from '../models/collection_item';
 import {ICollectionItemDTO} from '../models/collection_item.interface';
 import {Options} from '../models/options';
 import {IOptionsDTO} from '../models/options.interface';
+import { CreationItem } from '../models/creation_item';
+import { ICreationItemDTO } from '../models/creation_item.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +22,7 @@ export class TailorCollectionService {
   constructor(private http: HttpClient) { }
 
   getCollection(name: string): Observable<CollectionItem[]> {
-    const url = `${this.mainUrl}/${name}.json`;;
+    const url = `${this.mainUrl}/${name}.json`;
     
     return this.http
             .get<ICollectionItemDTO[]>(url)
@@ -41,5 +43,17 @@ export class TailorCollectionService {
                 return Options.factory(item) as Options
               }))
             );
+  }
+
+  getCreations(): Observable<CreationItem[]>{
+    const url = `${this.mainUrl}/creations.json`;
+    
+    return this.http
+            .get<ICreationItemDTO[]>(url)
+            .pipe(
+              map(response => response.map((item) => {
+                return CreationItem.factory(item) as CreationItem
+              }))
+          );
   }
 }

@@ -12,4 +12,7 @@ export class TailorFooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showLink(){
+    alert('Przycisk plik wektorowy utworzone przez macrovector - pl.freepik.com -> https://pl.freepik.com/wektory/przycisk');
+    }
 }

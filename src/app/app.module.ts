@@ -11,6 +11,8 @@ import { TailorModelComponent } from './components/tailor_model/tailor_model.com
 import { TailorHeaderComponent } from './components/tailor_header/tailor_header.component';
 import { TailorFooterComponent } from './components/tailor_footer/tailor_footer.component';
 import { TailorStartComponent } from './components/tailor_start/tailor_start.component';
+import { TailorGalleryComponent } from './components/tailor-gallery/tailor-gallery.component';
+import { TailorInformationComponent } from './components/tailor-information/tailor-information.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { TailorStartComponent } from './components/tailor_start/tailor_start.com
     TailorModelComponent,
     TailorHeaderComponent,
     TailorFooterComponent,
-    TailorStartComponent
+    TailorStartComponent,
+    TailorGalleryComponent,
+    TailorInformationComponent
   ],
   imports: [
     BrowserModule,

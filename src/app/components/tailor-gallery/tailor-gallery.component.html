@@ -1,0 +1,7 @@
+<div *ngFor="let id of creations; index as i" class="model">
+    <img class="imgFront" src="{{assetsUrl}}{{creations[i].frontItem.name}}" alt="creations[i].frontItem.name">
+    <img class="imgBottom" src="{{assetsUrl}}{{creations[i].bottomItem.name}}" alt="creations[i].bottomItem.name">
+    <img class="imgBelt" src="{{assetsUrl}}{{creations[i].beltItem.name}}" alt="creations[i].beltItem.name">
+    <img class="imgBack" src="{{assetsUrl}}{{creations[i].backItem.name}}" alt="creations[i].backItem.name">
+    <img class="imgFabric" src="{{assetsUrl}}{{creations[i].fabricItem.name}}" alt="creations[i].fabricItem.name">
+</div>

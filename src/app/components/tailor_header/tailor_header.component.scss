@@ -12,14 +12,15 @@
    
     ul{
         display:flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
-        width:700px;
+        width:900px;
         height:180px;
         list-style:none;
         
     }
-    li{        
+    li{       
+        margin-left:50px; 
         font-size: 25px;
         text-transform: uppercase;
         font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;        
@@ -32,10 +33,6 @@
         padding-bottom: 5px;
         border-bottom: 2px solid black;
         color:black;
-    }
-    
-    li:focus, img:focus{
-        outline:0;
     }
 }
 

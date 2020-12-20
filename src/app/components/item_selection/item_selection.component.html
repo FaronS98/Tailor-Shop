@@ -1,4 +1,5 @@
 <section class="selection-panel">
+  
   <div class="options">
     <div 
       *ngFor="let option of options" 
@@ -9,10 +10,17 @@
       <img src="{{assetsUrl}}{{option.src}}" alt="{{option.type}}"/>
     </div>
   </div>
+
   <div class="items">
     <h3>{{selectedCollectionName}}</h3>
-    <div class="selections-of-items">
-      <div 
+    <div 
+      *ngIf="selectedCollectionName !== ''" 
+      class="selections-of-items">
+        <button      
+          class="close"
+          (click)="selectedCollectionName = ''"
+        >X</button>
+      <div   
         *ngFor="let item of selectedCollection">
           <img 
             [ngClass]="{'belt-img': selectedCollectionName === 'belt', 'active': item === selectedItem}"
@@ -20,6 +28,27 @@
             alt="item.name"
             (click)="onItemSelection.emit(item)"
           >
-        </div>
+        </div>        
+    </div>
+
+    <div 
+      *ngIf="selectedCollectionName === ''"
+      class="information">
+        <h3>Witaj w kreatorze</h3>
+        <h4>Wykreuj sukienkę swoich marzeń</h4>
+        <h5>Opcje wyboru oferują wybranie części sukienki takich jak:</h5>
+        <p>Góra sukienki</p>
+        <p>Dół sukienki</p>
+        <p>Pasek</p>
+        <p>Tył sukienki</p>
+        <p>Tkanina</p>
+        <h5>Wybierz intersujące Cie elementy sposród wyswietlonych części sukienki</h5>
+        <h5>Model posiada trzy przyciski</h5>
+        <p>Dobierz najpopularniejszą kombinacje kreacji</p>
+        <p>Dobierz losową kombinacje kreacji</p>
+        <p>Zapisz i wyślij kreację</p>
+        <h5>Cena liczona jest na podstawie trudności wykonania poszczególnych elementów oraz wartości tkaniny</h5>
     </div>
 </div>
+
+</section>

@@ -1,4 +1,6 @@
 .footer{
+    display: flex;
+    justify-content: space-between;
     width:100%; 
     margin:0 auto;
     background-color: black;
@@ -7,6 +9,56 @@
     padding:25px;
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
+
+    .data{        
+        display: flex;
+        justify-content: space-between;
+        padding: 0 80px;
+        width:90%;
+        font-family: 'JetBrains Mono', monospace;
+        h3{
+            font-size: 20px;
+            line-height: 40px;
+        }
+        p{
+            font-size: 14px;
+            font-family:'Roboto Condensed', Arial, Helvetica, sans-serif;    
+        }
+        i{
+            font-size: 30px;
+            padding: 10px 15px;
+        }
+    }
+
+    .show{
+        position: relative;
+        width:10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i{
+            padding:10px 15px;
+            border:2px solid #fff;
+            border-radius:50%;
+            font-size: 40px;
+            cursor:pointer;
+            transition: .4s;
+        }
+        i:hover{
+            background-color: #fff;
+            color:rgb(58, 56, 56);
+        }
+        p{
+            position:absolute;
+            font-size: 0;
+            top:-10px;
+        }       
+    }
+
+    .show:hover p{
+        font-size: 10px;
+    }
+
     a{
         color:white;
         text-decoration:none;
