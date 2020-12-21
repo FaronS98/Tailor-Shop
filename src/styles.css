@@ -10,3 +10,7 @@
     box-sizing: border-box;
     outline: 0;
 }
+
+img{
+    display:block;
+}

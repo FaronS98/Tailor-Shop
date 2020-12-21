@@ -13,6 +13,7 @@ export class TailorGalleryComponent implements OnInit {
   creations:CreationItem[] = [];
   assetsUrl: string = "../../assets/img/creator/";
   collectionItem: CollectionItem[] = [];
+  selectedCreation = null;
 
   /**
    * @constructor
@@ -30,7 +31,7 @@ export class TailorGalleryComponent implements OnInit {
   }
 
    /**
-   * Set collection 
+   * Set collection in creation
    */
   setCollection(): void {
     let types = ['front','bottom','belt','back','fabric'];
@@ -46,9 +47,47 @@ export class TailorGalleryComponent implements OnInit {
    */
   getCreations(): void {    
     this.tailorCollectionService.getCreations().subscribe(creations => {
-      this.creations = creations; 
-      console.log(this.creations.length)      
+      this.creations = creations;    
       });
   }
 
+  /**
+   * Show creation in gallery modal
+   * @param creation
+   */
+  showCreationModal(creation){  
+    this.selectedCreation = creation;
+    console.log(this.selectedCreation.id)
+    document.querySelector('.gallery').classList.add('blur');
+  }
+
+  /**
+   * Hide modal gallery
+   */
+  hideCreationModal(){
+    this.selectedCreation = null;
+    document.querySelector('.gallery').classList.remove('blur');
+  }
+
+  /**
+   * Support for the prev button in the modal in the gallery
+   */
+  viewPreviousCreation(){
+    if(this.selectedCreation === this.creations[0]){
+      this.selectedCreation = this.creations[this.creations.length-1];
+    }else{
+      this.selectedCreation = this.creations[this.selectedCreation.id -2];
+    }
+  }
+
+  /**
+   * Support for the next button in the modal in the gallery
+   */
+  viewNextCreation(){
+    if(this.selectedCreation == this.creations[this.creations.length -1]){
+      this.selectedCreation = this.creations[0];
+    }else{
+      this.selectedCreation = this.creations[this.selectedCreation.id];
+    }
+  }
 }

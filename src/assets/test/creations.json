@@ -26,8 +26,8 @@
             "type": "belt"
         },
         "fabric_item":  {
-            "id": 3,
-            "name": "fabric3.jpg",
+            "id": 12,
+            "name": "fabric12.jpg",
             "price": 1.3,
             "type": "fabric"
         },
@@ -102,7 +102,7 @@
         "price": 20
     },
     {
-        "id": 1,
+        "id": 4,
         "front_item":  {
             "id":1,
             "name": "front.png",
@@ -136,7 +136,7 @@
         "price": 20
     },
     {
-        "id": 2,
+        "id": 5,
         "front_item":  {
             "id":3,
             "name": "front3.png",
@@ -170,7 +170,7 @@
         "price": 20
     },
     {
-        "id": 3,
+        "id": 6,
         "front_item":  {
             "id":5,
             "name": "front5.png",
@@ -204,7 +204,7 @@
         "price": 20
     },
     {
-        "id": 1,
+        "id": 7,
         "front_item":  {
             "id":1,
             "name": "front.png",
@@ -238,7 +238,7 @@
         "price": 20
     },
     {
-        "id": 2,
+        "id": 8,
         "front_item":  {
             "id":3,
             "name": "front3.png",
@@ -272,7 +272,7 @@
         "price": 20
     },
     {
-        "id": 3,
+        "id": 9,
         "front_item":  {
             "id":5,
             "name": "front5.png",
@@ -306,7 +306,7 @@
         "price": 20
     },
     {
-        "id": 1,
+        "id": 10,
         "front_item":  {
             "id":1,
             "name": "front.png",
@@ -340,7 +340,7 @@
         "price": 20
     },
     {
-        "id": 2,
+        "id": 11,
         "front_item":  {
             "id":3,
             "name": "front3.png",
@@ -374,7 +374,7 @@
         "price": 20
     },
     {
-        "id": 3,
+        "id": 12,
         "front_item":  {
             "id":5,
             "name": "front5.png",
@@ -408,7 +408,7 @@
         "price": 20
     },
     {
-        "id": 1,
+        "id": 13,
         "front_item":  {
             "id":1,
             "name": "front.png",
@@ -442,7 +442,7 @@
         "price": 20
     },
     {
-        "id": 2,
+        "id": 14,
         "front_item":  {
             "id":3,
             "name": "front3.png",
@@ -476,7 +476,7 @@
         "price": 20
     },
     {
-        "id": 3,
+        "id": 15,
         "front_item":  {
             "id":5,
             "name": "front5.png",
@@ -502,8 +502,8 @@
             "type": "belt"
         },
         "fabric_item":  {
-            "id": 1,
-            "name": "fabric.jpg",
+            "id": 11,
+            "name": "fabric11.jpg",
             "price": 1.3,
             "type": "fabric"
         },
