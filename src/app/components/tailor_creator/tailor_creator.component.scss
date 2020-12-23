@@ -2,8 +2,9 @@
     .creator{    
         display: flex;
         justify-content: space-between;
+        flex-wrap:wrap;
         width: 1280px;
-        height: 700px;
+        height: 800px;
         margin: 15px auto;
         border-radius: 30px;
         background-color: rgb(247, 240, 240);    

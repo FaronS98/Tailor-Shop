@@ -1,0 +1,28 @@
+:host{
+    width:100%;
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+        width:80%;
+        margin:0 auto;
+        
+        button{
+            width:280px;
+            font-size: 18px;
+            line-height: 42px;
+            text-align: center;
+            background-color: rgb(11, 243, 11);
+            border: 1px solid grey;
+            border-radius: 20px;
+            cursor:pointer;
+        }
+
+        button:nth-of-type(1){
+            background-color: rgb(245, 245, 0);
+        }
+
+        button:nth-of-type(2){
+            background-color: rgb(13, 220, 235);
+        }
+    }
+}

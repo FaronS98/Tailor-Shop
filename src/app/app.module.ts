@@ -13,6 +13,7 @@ import { TailorFooterComponent } from './components/tailor_footer/tailor_footer.
 import { TailorStartComponent } from './components/tailor_start/tailor_start.component';
 import { TailorGalleryComponent } from './components/tailor-gallery/tailor-gallery.component';
 import { TailorInformationComponent } from './components/tailor-information/tailor-information.component';
+import { CreatorButtonsComponent } from './components/creator-buttons/creator-buttons.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { TailorInformationComponent } from './components/tailor-information/tail
     TailorFooterComponent,
     TailorStartComponent,
     TailorGalleryComponent,
-    TailorInformationComponent
+    TailorInformationComponent,
+    CreatorButtonsComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,5 @@ export class TailorModelComponent {
   
   @Input() selectedCollectionName: string = null;
   @Input() assetsUrl: string = null;
-
   @Input() creation: CreationItem = null;
 }
