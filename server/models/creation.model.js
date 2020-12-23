@@ -43,11 +43,23 @@ var CreationSchema = new Schema(
             type: Number,
             required: false
         },
-        dateOfOrder: {
-            type: Date,
-            required: false
+        bustCircumference:{
+            type: Number,
+            required: true
         },
-        executionDate: {
+        waistCircumference:{
+            type: Number,
+            required: true
+        },
+        hipCircumference:{
+            type: Number,
+            required: true
+        },
+        growth:{
+            type: Number,
+            required: true
+        },
+        dateOfOrder: {
             type: Date,
             required: false
         }

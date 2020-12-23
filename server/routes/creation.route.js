@@ -28,8 +28,11 @@ app.post('/creations', (req, res) => {
     creation.userSurname = req.body.userSurname;
     creation.userEmail = req.body.userEmail;
     creation.userTelephoneNumber = req.body.userTelephoneNumber;
+    creation.bustCircumference = req.body.bustCircumference;
+    creation.waistCircumference = req.body.waistCircumference;
+    creation.hipCircumference = req.body.hipCircumference;
+    creation.growth = req.body.growth;
     creation.dateOfOrder = req.body.dateOfOrder;
-    creation.executionDate = req.body.executionDate;
 
     creation.save((err) => {
         if (err) {

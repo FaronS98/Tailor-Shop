@@ -1,4 +1,5 @@
 import {CollectionItem} from './collection_item';
+import {User} from './user';
 
 export interface ICreationItemDTO {
     id: string|number;
@@ -8,4 +9,6 @@ export interface ICreationItemDTO {
     back_tem: CollectionItem;
     fabric_item: CollectionItem;
     price: number;
+    user: User;
+    date_of_order: Date;
 }

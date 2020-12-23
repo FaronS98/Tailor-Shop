@@ -17,7 +17,7 @@ export class TailorCreatorComponent implements OnInit {
   selectedCollection: CollectionItem[] = [];
   selectedCollectionName: string = '';
   selectedItem: Object = null;
-  creation: CreationItem = CreationItem.factory({id: 1, front_item: null, bottom_item: null, belt_item: null, back_tem: null, fabric_item: null, price: 0 });
+  creation: CreationItem = CreationItem.factory({id: 1, front_item: null, bottom_item: null, belt_item: null, back_tem: null, fabric_item: null, price: 0 , user: null , date_of_order: null});
   assetsUrl: string = "../../assets/img/creator/";
   randomCreation:Boolean= false;
   randomCreationWithElement:Boolean= false;
@@ -49,7 +49,8 @@ export class TailorCreatorComponent implements OnInit {
   /**
    * Place the creative in the model
    */  
-  setCreation(){    
+  setCreation(){  
+    this.creation.price = 0;  
      for(let option of this.options){
       this.tailorCollectionService.getCollection(option.name).subscribe(collection =>{
        let number = 0;
@@ -57,12 +58,15 @@ export class TailorCreatorComponent implements OnInit {
         switch(option.name){         
           case 'front':
             if(this.randomCreation === true || (this.selectedItem != null && this.selectedItem['type'] !== 'front')){
-              number = Math.floor(Math.random() * length);
+              number = Math.floor(Math.random() * length);              
             }
             if(this.randomCreationWithElement === true && (this.selectedItem != null && this.selectedItem['type'] === 'front')){
               this.creation.frontItem = collection[this.selectedItem['id'] - 1];
             }
-            else this.creation.frontItem = collection[number];
+            else {
+              this.creation.frontItem = collection[number];
+              this.creation.price += collection[number].price
+            }
           break;
           case 'bottom': 
             if(this.randomCreation === true || (this.selectedItem != null && this.selectedItem['type'] !== 'bottom')){   
@@ -71,7 +75,10 @@ export class TailorCreatorComponent implements OnInit {
             if(this.randomCreationWithElement === true && (this.selectedItem != null && this.selectedItem['type'] === 'bottom')){              
               this.creation.bottomItem = collection[this.selectedItem['id'] - 1];
             }  
-            else this.creation.bottomItem = collection[number];  
+            else {
+              this.creation.bottomItem = collection[number];
+              this.creation.price += collection[number].price
+             }  
           break;
           case 'belt':   
             if(this.randomCreation === true || (this.selectedItem != null && this.selectedItem['type'] !== 'belt')){
@@ -80,7 +87,10 @@ export class TailorCreatorComponent implements OnInit {
             if(this.randomCreationWithElement === true && (this.selectedItem != null && this.selectedItem['type'] === 'belt')){
               this.creation.beltItem = collection[this.selectedItem['id'] - 1]; 
             }          
-            else this.creation.beltItem = collection[number];
+            else {
+              this.creation.beltItem = collection[number];
+              this.creation.price += collection[number].price
+             }
           break;
           case 'back':
             if(this.randomCreation === true || (this.selectedItem != null && this.selectedItem['type'] !== 'back')){
@@ -89,7 +99,10 @@ export class TailorCreatorComponent implements OnInit {
             if(this.randomCreationWithElement === true && (this.selectedItem != null && this.selectedItem['type'] === 'back')){
               this.creation.backItem = collection[this.selectedItem['id'] - 1]; 
             }               
-            else this.creation.backItem = collection[number];
+            else {
+              this.creation.backItem = collection[number];
+              this.creation.price += collection[number].price
+             }
           break;
           case 'fabric': 
             if(this.randomCreation === true || (this.selectedItem != null && this.selectedItem['type'] !== 'fabric')){  
@@ -98,7 +111,10 @@ export class TailorCreatorComponent implements OnInit {
             if(this.randomCreationWithElement === true && (this.selectedItem != null && this.selectedItem['type'] === 'fabric')){
               this.creation.fabricItem = collection[this.selectedItem['id'] - 1];
             }           
-            else this.creation.fabricItem = collection[number];
+            else {
+              this.creation.fabricItem = collection[number];
+              this.creation.price *= collection[number].price
+             }
           break;
         }        
      });

@@ -1,6 +1,7 @@
 import * as check from 'check-types';
 import {ICreationItemDTO} from './creation_item.interface';
 import {CollectionItem} from './collection_item';
+import {User} from './user';
 
 export class CreationItem {
 
@@ -11,6 +12,8 @@ export class CreationItem {
     backItem: CollectionItem = null;
     fabricItem: CollectionItem = null;
     price: number = 0;
+    user: User = null;
+    dateOfOrder: Date = null;
 
 
     /**
@@ -49,6 +52,14 @@ export class CreationItem {
             this.price = data.price;
         }
 
+        if (check.assigned(data.user)) {
+            this.user = data.user;
+        }
+
+        if (check.assigned(data.date_of_order)) {
+            this.dateOfOrder = data.date_of_order;
+        }
+
         return this;
     }
 
@@ -68,6 +79,8 @@ export class CreationItem {
         data.back_tem = this.backItem;        
         data.fabric_item = this.fabricItem;
         data.price = this.price;
+        data.user = this.user;
+        data.date_of_order = this.dateOfOrder;
 
         return data;
     }
