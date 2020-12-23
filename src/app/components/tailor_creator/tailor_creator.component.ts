@@ -17,7 +17,7 @@ export class TailorCreatorComponent implements OnInit {
   selectedCollection: CollectionItem[] = [];
   selectedCollectionName: string = '';
   selectedItem: Object = null;
-  creation: CreationItem = CreationItem.factory({id: 1, front_item: null, bottom_item: null, belt_item: null, back_tem: null, fabric_item: null, price: 0});
+  creation: CreationItem = CreationItem.factory({id: 1, front_item: null, bottom_item: null, belt_item: null, back_tem: null, fabric_item: null, price: 0 });
   assetsUrl: string = "../../assets/img/creator/";
   randomCreation:Boolean= false;
   randomCreationWithElement:Boolean= false;
@@ -35,7 +35,7 @@ export class TailorCreatorComponent implements OnInit {
    * Initialization
    */
   ngOnInit(): void {
-    this.setDefaultSettings();
+    this.setDefaultSettings();    
   }
 
 
@@ -43,7 +43,7 @@ export class TailorCreatorComponent implements OnInit {
    * Set default settings
    */
   private setDefaultSettings(): void {
-    this.getOptions();   
+    this.getOptions();      
   }
 
   /**
@@ -143,7 +143,7 @@ export class TailorCreatorComponent implements OnInit {
   getOptions(): void {
     this.tailorCollectionService.getOptions().subscribe(options => {
       this.options = options;  
-      this.setCreation();   
+      this.setCreation();  
     });
   }
 
@@ -186,10 +186,8 @@ export class TailorCreatorComponent implements OnInit {
         break;
       default:
         break;
-    }
-
-    // this.creation.price = this.calculateCreationPrice(this.creation);
-    
+    }   
+     this.creation.price = this.calculateCreationPrice(this.creation);    
   }
 
 
@@ -198,12 +196,12 @@ export class TailorCreatorComponent implements OnInit {
    * @param {CreationItem} creation
    * @return {number}
    */
-  // calculateCreationPrice(creation: CreationItem): number {
-  //   return (check.assigned(creation.frontItem.price) ? creation.frontItem.price : 0) + 
-  //     (check.assigned(creation.backItem.price) ? creation.backItem.price : 0) +
-  //     (check.assigned(creation.bottomItem.price) ? creation.bottomItem.price : 0) +
-  //     (check.assigned(creation.beltItem.price) ? creation.beltItem.price : 0) +
-  //     (check.assigned(creation.fabricItem.price) ? creation.fabricItem.price : 0);
-  // }
+  calculateCreationPrice(creation: CreationItem): number {
+    return (check.assigned(creation.frontItem.price) ? creation.frontItem.price : 0) + 
+      (check.assigned(creation.backItem.price) ? creation.backItem.price : 0) +
+      (check.assigned(creation.bottomItem.price) ? creation.bottomItem.price : 0) +
+      (check.assigned(creation.beltItem.price) ? creation.beltItem.price : 0) *
+      (check.assigned(creation.fabricItem.price) ? creation.fabricItem.price : 0);
+  }
 }
 

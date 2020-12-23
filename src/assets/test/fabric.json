@@ -2,19 +2,19 @@
     {
         "id": 1,
         "name": "fabric.jpg",
-        "price": 1.3,
+        "price": 1.0,
         "type": "fabric"
     },
     {
         "id": 2,
         "name": "fabric2.jpg",
-        "price": 1.3,
+        "price": 1.2,
         "type": "fabric"
     },
     {
         "id": 3,
         "name": "fabric3.jpg",
-        "price": 1.3,
+        "price": 1.5,
         "type": "fabric"
     },
     {

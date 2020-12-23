@@ -13,7 +13,7 @@ export class TailorGalleryComponent implements OnInit {
   creations:CreationItem[] = [];
   assetsUrl: string = "../../assets/img/creator/";
   collectionItem: CollectionItem[] = [];
-  selectedCreation = null;
+  selectedCreationId: number = null;
 
   /**
    * @constructor
@@ -25,69 +25,53 @@ export class TailorGalleryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getCreations();
-    this.setCollection();
-    
-  }
-
-   /**
-   * Set collection in creation
-   */
-  setCollection(): void {
-    let types = ['front','bottom','belt','back','fabric'];
-    for(let type of types){
-      this.tailorCollectionService.getCollection(type).subscribe(collection => {
-        this.collectionItem = collection;
-      });
-    }    
+    this.getCreations();    
   }
 
   /**
    * Get creations
    */
-  getCreations(): void {    
+  getCreations(): void {
     this.tailorCollectionService.getCreations().subscribe(creations => {
-      this.creations = creations;    
-      });
+      this.creations = creations;
+    });
   }
+
 
   /**
    * Show creation in gallery modal
-   * @param creation
+   * @param {number} id
    */
-  showCreationModal(creation){  
-    this.selectedCreation = creation;
-    console.log(this.selectedCreation.id)
+  showCreationModal(id: number) {  
+    this.selectedCreationId = id;
     document.querySelector('.gallery').classList.add('blur');
   }
 
   /**
    * Hide modal gallery
    */
-  hideCreationModal(){
-    this.selectedCreation = null;
+  hideCreationModal() {
+    this.selectedCreationId = null;
     document.querySelector('.gallery').classList.remove('blur');
   }
 
   /**
-   * Support for the prev button in the modal in the gallery
+   * Support for the prev and next buttons in the modal in the gallery
    */
-  viewPreviousCreation(){
-    if(this.selectedCreation === this.creations[0]){
-      this.selectedCreation = this.creations[this.creations.length-1];
+  changeCreation(direction: string) {
+    if(direction === 'prev'){
+      if(this.selectedCreationId === 0){
+        this.selectedCreationId = this.creations.length -1;
+      }else{
+        this.selectedCreationId--;
+      }
     }else{
-      this.selectedCreation = this.creations[this.selectedCreation.id -2];
+      if(this.selectedCreationId === this.creations.length -1){
+        this.selectedCreationId = 0;
+      }else{
+        this.selectedCreationId++;
+      }
     }
-  }
 
-  /**
-   * Support for the next button in the modal in the gallery
-   */
-  viewNextCreation(){
-    if(this.selectedCreation == this.creations[this.creations.length -1]){
-      this.selectedCreation = this.creations[0];
-    }else{
-      this.selectedCreation = this.creations[this.selectedCreation.id];
-    }
   }
 }

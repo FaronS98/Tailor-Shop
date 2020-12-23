@@ -7,7 +7,7 @@ import {ICollectionItemDTO} from '../models/collection_item.interface';
 import {Options} from '../models/options';
 import {IOptionsDTO} from '../models/options.interface';
 import { CreationItem } from '../models/creation_item';
-import { ICreationItemDTO } from '../models/creation_item.interface';
+import {ICreationItemDTO} from '../models/creation_item.interface';
 
 @Injectable({
   providedIn: 'root'

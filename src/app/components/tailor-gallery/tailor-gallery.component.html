@@ -1,4 +1,4 @@
-<section *ngIf="selectedCreation !==null" class="modal-body">
+<section *ngIf="selectedCreationId !==null" class="modal-body">
     <div  class="modal-wrap">
         <div class="modal">            
             <div class="top">
@@ -7,18 +7,18 @@
             <div class="bottom">
                 <button 
                     class="fas fa-arrow-left button-prev"
-                    (click)="viewPreviousCreation()"
+                    (click)="changeCreation('prev')"
                 ></button>
                 <div class="creation">
-                    <img class="imgFront" src="{{assetsUrl}}{{selectedCreation.frontItem.name}}" alt="selectedCreation.frontItem.name">
-                    <img class="imgBottom" src="{{assetsUrl}}{{selectedCreation.bottomItem.name}}" alt="creations[selectedCreation].bottomItem.name">
-                    <img class="imgBelt" src="{{assetsUrl}}{{selectedCreation.beltItem.name}}" alt="creations[selectedCreation].beltItem.name">
-                    <img class="imgFabric imgFabricModal" src="{{assetsUrl}}{{selectedCreation.fabricItem.name}}" alt="creations[selectedCreation].fabricItem.name">
-                    <img class="imgBack imgBackModal" src="{{assetsUrl}}{{selectedCreation.backItem.name}}" alt="creations[selectedCreation].backItem.name">
+                    <img class="imgFront" src="{{assetsUrl}}{{creations[selectedCreationId].frontItem.name}}" alt="creations[selectedCreationId].frontItem.name">
+                    <img class="imgBottom" src="{{assetsUrl}}{{creations[selectedCreationId].bottomItem.name}}" alt="creations[selectedCreationId].bottomItem.name">
+                    <img class="imgBelt" src="{{assetsUrl}}{{creations[selectedCreationId].beltItem.name}}" alt="creations[selectedCreationId].beltItem.name">
+                    <img class="imgFabric imgFabricModal" src="{{assetsUrl}}{{creations[selectedCreationId].fabricItem.name}}" alt="creations[selectedCreationId].fabricItem.name">
+                    <img class="imgBack imgBackModal" src="{{assetsUrl}}{{creations[selectedCreationId].backItem.name}}" alt="creations[selectedCreationId].backItem.name">
                 </div>
                 <button 
                     class="fas fa-arrow-right button-next"
-                    (click)="viewNextCreation()">
+                    (click)="changeCreation('next')">
                 </button>
             </div>
             <span class="hide" 
@@ -31,7 +31,7 @@
 <div class="gallery">
     <div *ngFor="let creation of creations; index as i" 
         class="model" 
-        (click)="showCreationModal(this.creation)">
+        (click)="showCreationModal(i)">
         <img class="imgFront" src="{{assetsUrl}}{{creations[i].frontItem.name}}" alt="creations[i].frontItem.name">
         <img class="imgBottom" src="{{assetsUrl}}{{creations[i].bottomItem.name}}" alt="creations[i].bottomItem.name">
         <img class="imgBelt" src="{{assetsUrl}}{{creations[i].beltItem.name}}" alt="creations[i].beltItem.name">
