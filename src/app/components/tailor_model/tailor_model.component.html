@@ -2,7 +2,7 @@
       <p>{{creation.price}} zł</p>
       <img *ngIf="creation.frontItem !== null" class="imgFront" src="{{assetsUrl}}{{creation.frontItem.name}}" alt="creation.frontItem.name">
       <img *ngIf="creation.bottomItem !== null"class="imgBottom" src="{{assetsUrl}}{{creation.bottomItem.name}}" alt="creation.bottomItem.name">
-      <img *ngIf="creation.beltItem !== null && creation.beltItem.id !== 1" class="imgBelt" src="{{assetsUrl}}{{creation.beltItem.name}}" alt="creation.beltItem.name">
+      <img *ngIf="creation.beltItem !== null && creation.beltItem.name !== 'belt.png'" class="imgBelt" src="{{assetsUrl}}{{creation.beltItem.name}}" alt="creation.beltItem.name">
       <img *ngIf="creation.fabricItem !== null" class="imgFabric" src="{{assetsUrl}}{{creation.fabricItem.name}}" alt="creation.fabricItem.name">
 </div>
 <div *ngIf="selectedCollectionName === 'back'" class="model">

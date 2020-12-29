@@ -2,7 +2,7 @@ import {CollectionItem} from './collection_item';
 import {User} from './user';
 
 export interface ICreationItemDTO {
-    id: string|number;
+    
     front_item: CollectionItem;
     bottom_item: CollectionItem;
     belt_item: CollectionItem;

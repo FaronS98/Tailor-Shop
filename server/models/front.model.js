@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var fabricSchema = new Schema({
+var frontSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -16,4 +16,4 @@ var fabricSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Fabric', fabricSchema);
+module.exports = mongoose.model('Front', frontSchema);

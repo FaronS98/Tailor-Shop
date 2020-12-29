@@ -17,4 +17,10 @@ export class ItemSelectionComponent {
   @Input() assetsUrl: string = null;
   @Output() onOptionSelection = new EventEmitter<Options>();
   @Output() onItemSelection = new EventEmitter<CollectionItem>();
+  @Output() closeOption = new EventEmitter<string>();
+
+  shutdownOption(){
+    this.selectedCollectionName = '';
+    this.closeOption.emit('');
+  }
 }

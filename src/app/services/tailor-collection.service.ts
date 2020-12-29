@@ -9,20 +9,23 @@ import {IOptionsDTO} from '../models/options.interface';
 import { CreationItem } from '../models/creation_item';
 import {ICreationItemDTO} from '../models/creation_item.interface';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class TailorCollectionService {
 
-  mainUrl: string = '../assets/test';
+  mainUrl: string = '../assets/data';
+  urlServer:string = 'http://localhost:3000'
 
   /**
    * @constructor
    */
   constructor(private http: HttpClient) { }
+ 
 
   getCollection(name: string): Observable<CollectionItem[]> {
-    const url = `${this.mainUrl}/${name}.json`;
+    const url = `${this.urlServer}/${name}`;
     
     return this.http
             .get<ICollectionItemDTO[]>(url)

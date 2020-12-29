@@ -4,7 +4,7 @@ import {TailorCollectionService} from '../../services/tailor-collection.service'
 import {Options} from '../../models/options';
 import {CollectionItem} from 'src/app/models/collection_item';
 import {CreationItem} from 'src/app/models/creation_item';
-import { fromEvent } from 'rxjs';
+
 
 @Component({
   selector: 'app-tailor-creator',
@@ -16,12 +16,13 @@ export class TailorCreatorComponent implements OnInit {
   options: Options[] = [];
   selectedCollection: CollectionItem[] = [];
   selectedCollectionName: string = '';
-  selectedItem: Object = null;
-  creation: CreationItem = CreationItem.factory({id: 1, front_item: null, bottom_item: null, belt_item: null, back_tem: null, fabric_item: null, price: 0 , user: null , date_of_order: null});
+  selectedItem: any = null;
+  creation: CreationItem = CreationItem.factory({front_item: null, bottom_item: null, belt_item: null, back_tem: null, fabric_item: null, price: 0 , user: null , date_of_order: null});
   assetsUrl: string = "../../assets/img/creator/";
   randomCreation:Boolean= false;
   randomCreationWithElement:Boolean= false;
 
+  
   /**
    * @constructor
    */
@@ -35,9 +36,8 @@ export class TailorCreatorComponent implements OnInit {
    * Initialization
    */
   ngOnInit(): void {
-    this.setDefaultSettings();    
+    this.setDefaultSettings();
   }
-
 
   /**
    * Set default settings
@@ -58,10 +58,10 @@ export class TailorCreatorComponent implements OnInit {
         switch(option.name){         
           case 'front':
             if(this.randomCreation === true || (this.selectedItem != null && this.selectedItem['type'] !== 'front')){
-              number = Math.floor(Math.random() * length);              
+              number = Math.floor(Math.random() * length); 
             }
             if(this.randomCreationWithElement === true && (this.selectedItem != null && this.selectedItem['type'] === 'front')){
-              this.creation.frontItem = collection[this.selectedItem['id'] - 1];
+              this.creation.frontItem = this.selectedItem;
             }
             else {
               this.creation.frontItem = collection[number];
@@ -73,7 +73,7 @@ export class TailorCreatorComponent implements OnInit {
               number = Math.floor(Math.random() * length); 
             }            
             if(this.randomCreationWithElement === true && (this.selectedItem != null && this.selectedItem['type'] === 'bottom')){              
-              this.creation.bottomItem = collection[this.selectedItem['id'] - 1];
+              this.creation.bottomItem = this.selectedItem;
             }  
             else {
               this.creation.bottomItem = collection[number];
@@ -85,7 +85,7 @@ export class TailorCreatorComponent implements OnInit {
               number = Math.floor(Math.random() * length);
             }
             if(this.randomCreationWithElement === true && (this.selectedItem != null && this.selectedItem['type'] === 'belt')){
-              this.creation.beltItem = collection[this.selectedItem['id'] - 1]; 
+              this.creation.beltItem = this.selectedItem;
             }          
             else {
               this.creation.beltItem = collection[number];
@@ -97,7 +97,7 @@ export class TailorCreatorComponent implements OnInit {
               number = Math.floor(Math.random() * length);
             }  
             if(this.randomCreationWithElement === true && (this.selectedItem != null && this.selectedItem['type'] === 'back')){
-              this.creation.backItem = collection[this.selectedItem['id'] - 1]; 
+              this.creation.backItem = this.selectedItem;
             }               
             else {
               this.creation.backItem = collection[number];
@@ -109,11 +109,11 @@ export class TailorCreatorComponent implements OnInit {
                 number = Math.floor(Math.random() * length); 
             }
             if(this.randomCreationWithElement === true && (this.selectedItem != null && this.selectedItem['type'] === 'fabric')){
-              this.creation.fabricItem = collection[this.selectedItem['id'] - 1];
+              this.creation.fabricItem = this.selectedItem;
             }           
             else {
               this.creation.fabricItem = collection[number];
-              this.creation.price *= collection[number].price
+              this.creation.price *= Math.floor(collection[number].price);
              }
           break;
         }        
@@ -173,6 +173,15 @@ export class TailorCreatorComponent implements OnInit {
     this.setCollection(this.selectedCollectionName);
   }
 
+  /**
+   * Close option
+   * @param {string} null
+   */
+  closeOption(option: string): void {
+    this.selectedCollectionName = option;
+    console.log(option)
+  }
+
 
   /**
    * Select item
@@ -213,11 +222,11 @@ export class TailorCreatorComponent implements OnInit {
    * @return {number}
    */
   calculateCreationPrice(creation: CreationItem): number {
-    return (check.assigned(creation.frontItem.price) ? creation.frontItem.price : 0) + 
+    return Math.floor((check.assigned(creation.frontItem.price) ? creation.frontItem.price : 0) + 
       (check.assigned(creation.backItem.price) ? creation.backItem.price : 0) +
       (check.assigned(creation.bottomItem.price) ? creation.bottomItem.price : 0) +
       (check.assigned(creation.beltItem.price) ? creation.beltItem.price : 0) *
-      (check.assigned(creation.fabricItem.price) ? creation.fabricItem.price : 0);
+      (check.assigned(creation.fabricItem.price) ? creation.fabricItem.price : 0));
   }
 }
 

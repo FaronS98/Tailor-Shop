@@ -3,7 +3,6 @@ import {ICollectionItemDTO} from './collection_item.interface';
 
 export class CollectionItem {
 
-    id: number|string = null;
     name: string = null;
     price: number = 0;
     type: string = null;
@@ -16,10 +15,6 @@ export class CollectionItem {
      * @return {ICollectionItemDTO}
      */
     fromJson(data): CollectionItem {
-
-        if (check.assigned(data.id)) {
-            this.id = data.id;
-        }
 
         if (check.assigned(data.name)) {
             this.name = data.name;
@@ -45,7 +40,6 @@ export class CollectionItem {
     toJson() {
         const data: ICollectionItemDTO = null;
 
-        data.id = this.id;
         data.name = this.name;
         data.price = this.price;
         data.type = this.type;

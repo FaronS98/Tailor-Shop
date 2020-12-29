@@ -5,7 +5,6 @@ import {User} from './user';
 
 export class CreationItem {
 
-    id: number|string = null;
     frontItem: CollectionItem = null;
     bottomItem: CollectionItem = null;
     beltItem: CollectionItem = null;
@@ -23,11 +22,7 @@ export class CreationItem {
      * @return {CreationItem}
      */
     fromJson(data): CreationItem {
-
-        if (check.assigned(data.id)) {
-            this.id = data.id;
-        }
-
+   
         if (check.assigned(data.front_item)) {
             this.frontItem = data.front_item;
         }
@@ -72,7 +67,6 @@ export class CreationItem {
     toJson() {
         const data: ICreationItemDTO = null;
 
-        data.id = this.id;
         data.front_item = this.frontItem;
         data.bottom_item = this.bottomItem;
         data.belt_item = this.beltItem;
