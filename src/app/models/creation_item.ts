@@ -71,7 +71,7 @@ export class CreationItem {
         data.bottomItem = this.bottomItem;
         data.beltItem = this.beltItem;
         data.backItem = this.backItem;        
-        data.fabricIitem = this.fabricItem;
+        data.fabricItem = this.fabricItem;
         data.price = this.price;
         data.user = this.user;
         data.dateOfOrder = this.dateOfOrder;

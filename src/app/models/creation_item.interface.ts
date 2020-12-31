@@ -7,7 +7,7 @@ export interface ICreationItemDTO {
     bottomItem: CollectionItem;
     beltItem: CollectionItem;
     backItem: CollectionItem;
-    fabricIitem: CollectionItem;
+    fabricItem: CollectionItem;
     price: number;
     user: User;
     dateOfOrder: Date;

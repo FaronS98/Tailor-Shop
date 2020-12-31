@@ -17,7 +17,7 @@ export class TailorCreatorComponent implements OnInit {
   selectedCollection: CollectionItem[] = [];
   selectedCollectionName: string = '';
   selectedItem: any = null;
-  creation: CreationItem = CreationItem.factory({front_item: null, bottom_item: null, belt_item: null, back_tem: null, fabric_item: null, price: 0 , user: null , date_of_order: null});
+  creation: CreationItem = CreationItem.factory({frontItem: null, bottomItem: null, beltItem: null, backItem: null, fabricItem: null, price: 0 , user: null , dateOfOrder: null});
   assetsUrl: string = "../../assets/img/creator/";
   randomCreation:Boolean= false;
   randomCreationWithElement:Boolean= false;
