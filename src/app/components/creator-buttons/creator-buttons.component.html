@@ -1,5 +1,43 @@
 <section class="buttons">
     <button (click)="random.emit(changeCreation)">Losuj kreacje</button>
     <button (click)="randomWithElement.emit(changeCreation)">Losuj z wybranym elementem</button>
-    <button>Wyślij zamówienie</button>
+    <button (click)="saveCreation()">Wyślij zapytanie o kreacje</button>
 </section>
+
+
+<section class="form">
+    <div class="user-data">
+        <h2>Dane kontaktowe</h2>
+        <label>Imie
+            <input type="text" [(ngModel)]="user.userName">
+        </label>
+        <label>Nazwisko
+            <input type="text" [(ngModel)]="user.userSurname">
+        </label>
+        <label>E-mail
+            <input type="text" [(ngModel)]="user.userEmail">
+        </label>
+        <label>Number Telefonu
+            <input type="number" [(ngModel)]="user.userTelephoneNumber" >
+        </label>
+        </div>
+        <div class="user-data">
+            <h2>Wymiary</h2>
+        <label>
+            <input type="number" [(ngModel)]="user.bustCircumference">
+            Obwód w biuście
+        </label>
+        <label>
+            <input type="number" [(ngModel)]="user.waistCircumference">
+            Obwód w talii
+        </label>
+        <label>
+            <input type="number" [(ngModel)]="user.hipCircumference">
+            Obwód w biodrach
+        </label>
+        <label>
+            <input type="number" [(ngModel)]="user.growth">
+            Wzrost
+        </label>
+        </div>
+    </section>

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, throwError} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {CollectionItem} from '../models/collection_item';
 import {ICollectionItemDTO} from '../models/collection_item.interface';
@@ -8,7 +8,7 @@ import {Options} from '../models/options';
 import {IOptionsDTO} from '../models/options.interface';
 import { CreationItem } from '../models/creation_item';
 import {ICreationItemDTO} from '../models/creation_item.interface';
-
+import {catchError} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ import {ICreationItemDTO} from '../models/creation_item.interface';
 export class TailorCollectionService {
 
   mainUrl: string = '../assets/data';
-  urlServer:string = 'http://localhost:3000'
+  urlServer:string = 'http://localhost:3000';  
 
   /**
    * @constructor
@@ -49,7 +49,7 @@ export class TailorCollectionService {
   }
 
   getCreations(): Observable<CreationItem[]>{
-    const url = `${this.mainUrl}/creations.json`;
+    const url = `${this.urlServer}/creation`;
     
     return this.http
             .get<ICreationItemDTO[]>(url)
@@ -59,4 +59,19 @@ export class TailorCollectionService {
               }))
           );
   }
+
+
+
+  saveCreation(creation: CreationItem) {
+    const url = `${this.urlServer}/creation`;
+    
+    return this.http
+            .post(url, {creation: creation})
+            .pipe(catchError(response => 
+               throwError(response.error)
+            ));
+  }
 }
+
+
+    

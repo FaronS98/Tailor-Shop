@@ -3,65 +3,125 @@ var Schema = mongoose.Schema;
  
 var CreationSchema = new Schema(
     {    
-        frontId: {
-            type: Number,
-            required: true
+        frontItem: {
+            name: {
+                type: String,
+                required: true
+            },
+            price:{
+                type: Number,
+                required: true
+            },
+            type:{
+                type: String,
+                required: true
+            }
         },
-        bottomId: {
-            type: Number,
-            required: true
+        bottomItem: {
+            name: {
+                type: String,
+                required: true
+            },
+            price:{
+                type: Number,
+                required: true
+            },
+            type:{
+                type: String,
+                required: true
+            }
         },
-        backId: {
-            type: Number,
-            required: true
+        backItem: {
+            name: {
+                type: String,
+                required: true
+            },
+            price:{
+                type: Number,
+                required: true
+            },
+            type:{
+                type: String,
+                required: true
+            }
         },
-        beltId: {
-            type: Number,
-            required: true
+        beltItem: {
+            name: {
+                type: String,
+                required: true
+            },
+            price:{
+                type: Number,
+                required: true
+            },
+            type:{
+                type: String,
+                required: true
+            }
         },
-        fabricId: {
-            type: Number,
-            required: true
+        fabricItem: {
+            name: {
+                type: String,
+                required: true
+            },
+            price:{
+                type: Number,
+                required: true
+            },
+            type:{
+                type: String,
+                required: true
+            }
         },        
         price: {
             type: Number,
             required: true
         },
-        userName: {
+        user: {
             type: String,
             required: false
-        },
-        userSurname: {
-            type: String,
-            required: false
-        },
-        userEmail: {
-            type: String,
-            required: false
-        },
-        userTelephoneNumber: {
-            type: Number,
-            required: false
-        },
-        bustCircumference:{
-            type: Number,
-            required: true
-        },
-        waistCircumference:{
-            type: Number,
-            required: true
-        },
-        hipCircumference:{
-            type: Number,
-            required: true
-        },
-        growth:{
-            type: Number,
-            required: true
         },
         dateOfOrder: {
-            type: Date,
+            type: String,
             required: false
+        },
+        user: {
+            userName: {
+                type: String,
+                required: false
+            },
+            userSurname: {
+                type: String,
+                required: false
+            },
+            userEmail: {
+                type: String,
+                required: false
+            },
+            userTelephoneNumber: {
+                type: Number,
+                required: false
+            },
+            bustCircumference:{
+                type: Number,
+                required: false
+            },
+            waistCircumference:{
+                type: Number,
+                required: false
+            },
+            hipCircumference:{
+                type: Number,
+                required: false
+            },
+            growth:{
+                type: Number,
+                required: false
+            }
+        }, 
+        dateOfOrder: {
+            type: Date,
+            default: Date.now
         }
     }
 );

@@ -3,12 +3,12 @@ import {User} from './user';
 
 export interface ICreationItemDTO {
     
-    front_item: CollectionItem;
-    bottom_item: CollectionItem;
-    belt_item: CollectionItem;
-    back_tem: CollectionItem;
-    fabric_item: CollectionItem;
+    frontItem: CollectionItem;
+    bottomItem: CollectionItem;
+    beltItem: CollectionItem;
+    backItem: CollectionItem;
+    fabricIitem: CollectionItem;
     price: number;
     user: User;
-    date_of_order: Date;
+    dateOfOrder: Date;
 }

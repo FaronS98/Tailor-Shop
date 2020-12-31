@@ -34,6 +34,7 @@ export class TailorGalleryComponent implements OnInit {
   getCreations(): void {
     this.tailorCollectionService.getCreations().subscribe(creations => {
       this.creations = creations;
+      console.log(this.creations)
     });
   }
 

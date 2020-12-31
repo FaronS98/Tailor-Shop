@@ -11,7 +11,7 @@ export class CreationItem {
     backItem: CollectionItem = null;
     fabricItem: CollectionItem = null;
     price: number = 0;
-    user: User = null;
+    user: User = null; 
     dateOfOrder: Date = null;
 
 
@@ -23,24 +23,24 @@ export class CreationItem {
      */
     fromJson(data): CreationItem {
    
-        if (check.assigned(data.front_item)) {
-            this.frontItem = data.front_item;
+        if (check.assigned(data.frontItem)) {
+            this.frontItem = data.frontItem;
         }
 
-        if (check.assigned(data.bottom_item)) {
-            this.bottomItem = data.bottom_item;
+        if (check.assigned(data.bottomItem)) {
+            this.bottomItem = data.bottomItem;
         }
 
-        if (check.assigned(data.belt_item)) {
-            this.beltItem = data.belt_item;
+        if (check.assigned(data.beltItem)) {
+            this.beltItem = data.beltItem;
         }
 
-        if (check.assigned(data.back_item)) {
-            this.backItem = data.back_item;
+        if (check.assigned(data.backItem)) {
+            this.backItem = data.backItem;
         }
 
-        if (check.assigned(data.fabric_item)) {
-            this.fabricItem = data.fabric_item;
+        if (check.assigned(data.fabricItem)) {
+            this.fabricItem = data.fabricItem;
         }
 
         if (check.assigned(data.price)) {
@@ -51,8 +51,8 @@ export class CreationItem {
             this.user = data.user;
         }
 
-        if (check.assigned(data.date_of_order)) {
-            this.dateOfOrder = data.date_of_order;
+        if (check.assigned(data.dateOfOrder)) {
+            this.dateOfOrder = data.dateOfOrder;
         }
 
         return this;
@@ -67,14 +67,14 @@ export class CreationItem {
     toJson() {
         const data: ICreationItemDTO = null;
 
-        data.front_item = this.frontItem;
-        data.bottom_item = this.bottomItem;
-        data.belt_item = this.beltItem;
-        data.back_tem = this.backItem;        
-        data.fabric_item = this.fabricItem;
+        data.frontItem = this.frontItem;
+        data.bottomItem = this.bottomItem;
+        data.beltItem = this.beltItem;
+        data.backItem = this.backItem;        
+        data.fabricIitem = this.fabricItem;
         data.price = this.price;
         data.user = this.user;
-        data.date_of_order = this.dateOfOrder;
+        data.dateOfOrder = this.dateOfOrder;
 
         return data;
     }

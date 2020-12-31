@@ -1,44 +1,65 @@
-var express = require('express'); 
-var app = module.exports = express.Router(); 
-var Creation = require('../models/creation.model');
+const express = require('express'); 
+const Creation = require('../models/creation.model');
+const router = express.Router();
  
 // GET, get all creation
-app.get('/creation/', (res) => {
-    Creation.find({}, (err, creations) => {   
-        if (err) {
-            return res.json({ "error": err });
-        } else {
-            console.log(creations);
-            return res.status(200).json(creations);
-        }
+router.get('/', ( req , res ) =>{
+   
+    Creation.find({},(err,data) =>{
+        res.json(data);
     });
-});
 
+});
 
 
 // POST new creation
-app.post('/creations', (req, res) => {
-    var creation = new Creation();
-    creation.frontId = req.body.frontId;
-    creation.bottomId = req.body.bottomId;
-    creation.backId = req.body.backId;
-    creation.beltId = req.body.beltId;
-    creation.price = req.body.price;
-    creation.userName = req.body.userName;
-    creation.userSurname = req.body.userSurname;
-    creation.userEmail = req.body.userEmail;
-    creation.userTelephoneNumber = req.body.userTelephoneNumber;
-    creation.bustCircumference = req.body.bustCircumference;
-    creation.waistCircumference = req.body.waistCircumference;
-    creation.hipCircumference = req.body.hipCircumference;
-    creation.growth = req.body.growth;
-    creation.dateOfOrder = req.body.dateOfOrder;
-
-    creation.save((err) => {
-        if (err) {
-            return res.status(409).json({message: 'Wrong data'});
-        } else {
-            return res.status(201).json(creation);
-        }
+router.post('/', (req, res) => {
+    
+    const creation = req.body.creation;
+    const creationData = new Creation({
+       frontItem:{
+        name: creation.frontItem.name,
+        price: creation.frontItem.price,
+        type: creation.frontItem.type
+       },
+       bottomItem:{
+        name: creation.bottomItem.name,
+        price: creation.bottomItem.price,
+        type: creation.bottomItem.type
+       },
+       backItem:{
+        name: creation.backItem.name,
+        price: creation.backItem.price,
+        type: creation.backItem.type
+       },
+       beltItem:{
+        name: creation.beltItem.name,
+        price: creation.beltItem.price,
+        type: creation.beltItem.type
+       },
+       fabricItem:{
+        name: creation.fabricItem.name,
+        price: creation.fabricItem.price,
+        type: creation.fabricItem.type
+       },
+       price: creation.price,
+       user:{
+        userName: creation.user.userName,
+        userSurname: creation.user.userSurname,
+        userEmail: creation.user.userEmail,
+        userTelephoneNumber: creation.user.userTelephoneNumber,
+        bustCircumference: creation.user.bustCircumference,
+        waistCircumference: creation.user.waistCircumference,
+        hipCircumference: creation.user.hipCircumference,
+        growth: creation.user.growth
+       },
+       dateOfOrder: this.default
+      
     });
+
+    creationData.save((err) => {
+        console.log(err);
+    });    
 });
+
+module.exports = router;
