@@ -14,6 +14,7 @@ import { TailorStartComponent } from './components/tailor_start/tailor_start.com
 import { TailorGalleryComponent } from './components/tailor-gallery/tailor-gallery.component';
 import { TailorInformationComponent } from './components/tailor-information/tailor-information.component';
 import { CreatorButtonsComponent } from './components/creator-buttons/creator-buttons.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CreatorButtonsComponent } from './components/creator-buttons/creator-bu
     TailorStartComponent,
     TailorGalleryComponent,
     TailorInformationComponent,
-    CreatorButtonsComponent
+    CreatorButtonsComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,51 @@
+<div *ngIf="correctLoginDetails === false" class="form">
+    <label>Login:<input type="text" [(ngModel)]="inscribedLogin"></label>
+    <label>Password:<input type="text" [(ngModel)]="inscribedPassword"></label>
+    <button (click)="checkLoginDetails()">Zaloguj</button>
+</div>
+
+<div *ngIf="correctLoginDetails === true" class="users">
+    <div *ngFor="let creation of creations; index as i" 
+        class="user"
+        (click)="showCreationModal(i)">
+            <p>{{creation.user.userName}}</p>
+            <p>{{creation.user.userSurname}}</p>
+            <p>{{creation.user.userEmail}}</p>
+            <p>{{creation.user.userTelephoneNumber}}</p>
+            <p>{{creation.dateOfOrder}}</p>   
+    </div>
+</div>
+
+<section *ngIf="selectedCreationId !==null" class="modal-body">
+    <div  class="modal-wrap">
+        <div class="modal">            
+            <div class="top">
+                <h2>Przeglądaj kreacje</h2>
+            </div>
+            <div class="bottom">   
+                <div class="data-user">
+                    <p>Imie:<span>{{creations[selectedCreationId].user.userName}}</span></p>
+                    <p>Nazwisko:<span>{{creations[selectedCreationId].user.userSurname}}</span></p>
+                    <p>E-mail:<span>{{creations[selectedCreationId].user.userEmail}}</span></p>
+                    <p>Numer Telefonu:<span>{{creations[selectedCreationId].user.userTelephoneNumber}}</span></p>
+                    <p>Obwód biustu:<span>{{creations[selectedCreationId].user.bustCircumference}}</span></p>
+                    <p>Obwód talii<span>{{creations[selectedCreationId].user.waistCircumference}}</span></p>
+                    <p>Obwód bioder<span>{{creations[selectedCreationId].user.hipCircumference}}</span></p>
+                    <p>Wzrost:<span>{{creations[selectedCreationId].user.growth}}</span></p>
+                    <p>Cena:<span>{{creations[selectedCreationId].price}}</span></p>  
+                    <p>Data wysłania zamówienia:<span>{{creations[selectedCreationId].dateOfOrder}}</span></p>              
+                </div>            
+                <div class="creation">
+                    <img class="imgFront" src="{{assetsUrl}}{{creations[selectedCreationId].frontItem.name}}" alt="creations[selectedCreationId].frontItem.name">
+                    <img class="imgBottom" src="{{assetsUrl}}{{creations[selectedCreationId].bottomItem.name}}" alt="creations[selectedCreationId].bottomItem.name">
+                    <img class="imgBelt" src="{{assetsUrl}}{{creations[selectedCreationId].beltItem.name}}" alt="creations[selectedCreationId].beltItem.name">
+                    <img class="imgFabric imgFabricModal" src="{{assetsUrl}}{{creations[selectedCreationId].fabricItem.name}}" alt="creations[selectedCreationId].fabricItem.name">
+                    <img class="imgBack imgBackModal" src="{{assetsUrl}}{{creations[selectedCreationId].backItem.name}}" alt="creations[selectedCreationId].backItem.name">
+                </div>                
+            </div>
+            <span class="hide" 
+                (click)="selectedCreationId = null">
+                <img src="{{assetsUrl}}../cross.png" alt=""></span>
+        </div>
+    </div>
+</section>
